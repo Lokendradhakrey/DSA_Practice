@@ -17,19 +17,21 @@ public class LinkedList {
 
         Node(int val) {
             this.val = val;
+            next = null;
         }
 
         public Node() {
+            next = null;
         }
     }
 
     void addAtFirst(int val) {
         Node node = new Node(val);
-        node.next = head;
-        head = node;
         if (tail == null) {
             tail = head;
         }
+        node.next = head;
+        head = node;
         size += 1;
 
     }
@@ -103,8 +105,8 @@ public class LinkedList {
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.addAt(0, 67);
         list.addAtFirst(42);
+        list.addAt(0, 67);
         list.printList();
         System.out.println(list.deleteLast());
         list.printList();
